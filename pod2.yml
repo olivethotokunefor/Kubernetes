@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oliveth-pod
+  labels:
+    name: oliveth-pod
+spec:
+  containers:
+  - name: oliveth-container
+    image: oliveth/oliveth-image:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  - name: oliveth-container2
+    image: tsola2002/kube-image:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"      
+    ports:
+      - containerPort: 80
